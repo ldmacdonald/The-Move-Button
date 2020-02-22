@@ -17,6 +17,19 @@ app.post('/register', function(req, res){
 	}
 );
 
+app.get('/signup', function(req, res){
+		fs.readFile('www/signup.html',
+            function(err, data) {
+                if (err) throw err;
+                res.writeHead(200);
+                res.write(data.toString('utf8'));
+                return res.end();
+        });
+
+	}
+);
+
+
 app.get('/login', function(req, res){
 		fs.readFile('www/login.html',
             function(err, data) {        

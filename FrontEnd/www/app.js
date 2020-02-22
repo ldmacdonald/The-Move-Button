@@ -7,6 +7,7 @@ function showtimer(){
     console.log($("#actions").find(":selected").text());
     console.log($("#time_intervals").find(":selected").text());
 
+
     var jqxhr = $.post( "login", function() {
           alert( "success" );
         })

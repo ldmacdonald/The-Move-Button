@@ -4,8 +4,10 @@ var app = express.createServer();
 const path = require("path");
 const port = 3000;
 var fs = require('fs');
+var apigClientFactory = require('aws-api-gateway-client').default;
 
 app.use(express.static(__dirname + '/www'));
+var userToken = 'XER';
 
 var friends = [{name : 'girish', age: '30'}, {name:'anand', age:'34'}];
 app.post('/register', function(req, res){
@@ -13,6 +15,34 @@ app.post('/register', function(req, res){
 		var pwd = req.param('pwd');
 		console.log(email + "-" + pwd);
 		// Auth
+		res.status(200).send({Guid : uuid.v1()});
+	}
+);
+
+app.post('/sendEvent', function(req, res){
+		var apigClient = apigClientFactory.newClient({
+			invokeUrl:'<>',
+			region: 'us-west-2',                                           
+			accessKey: '<>',                                
+			secretKey: '<>'
+		});
+		
+		var pathParams = {
+		};
+		var method = 'POST';
+		var additionalParams = {
+		};
+		var body = {
+			"EventTime": new Date(),
+			"UserID": userToken
+		};
+		var pathTemplate = "";
+		apigClient.invokeApi(pathParams, pathTemplate, method, additionalParams, body)
+			.then(function(result){
+				console.log(result);
+			}).catch( function(result){
+				console.log(result);
+			});
 		res.status(200).send({Guid : uuid.v1()});
 	}
 );

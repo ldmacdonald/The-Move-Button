@@ -1,0 +1,17 @@
+{
+  "name": "aws_hack",
+  "version": "1.0.0",
+  "description": "Backend for UI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "Girish",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^2.5.11",
+    "nodemon": "^2.0.2",
+    "uuid": "^3.4.0"
+  }
+}

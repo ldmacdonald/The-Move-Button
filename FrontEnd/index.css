@@ -13,8 +13,8 @@ body {
     /* align-content: center; */
     justify-content: center;
     grid-template-columns: auto;
-    grid-template-rows: 20% 20% 35%;
-    margin-top: 10%;
+    grid-template-rows: 10% 10% 40%;
+    margin-top: 15%;
 }
 
 header {
@@ -56,20 +56,26 @@ header h3 {
     color: #c4d4eb;
 }
 
-.app {
-    display: block; 
-}
 
-.actions {
-    border: 1px black solid;
 
+.actions, .times {
+    /* border: 1px black solid; */
+    text-align: center;
     /* width: fit-content; */
     
 }
 
 .actions label,
 .times label{
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.layout select {
+    height: 25px;
+}
+
+.actions select {
+    width: 120px;
 }
 
 

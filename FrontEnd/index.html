@@ -9,6 +9,8 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="index.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <!-- <script src="app.js"></script> -->
   <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
 </head>
 
@@ -45,7 +47,7 @@
         </select>
       </div>
 
-        <button class="btn" type="button">SET</button>
+        <button onClick="clicked()" class="btn" type="button">SET</button>
 
     </div>
 
@@ -56,6 +58,13 @@
   <script src="app.js"></script> 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="js/script.js"></script>
+  <script>
+    function clicked() {
+      console.log($("#actions").find(":selected").text());
+      console.log($("#time_intervals").find(":selected").text());
+      alert("Action and Time Interval is Set!");
+    }
+  </script>
 </body>
 
 </html>

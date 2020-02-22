@@ -1,0 +1,1 @@
+aws sns create-topic --name EventLog_Topic --profile aws_hack_2-22-2020

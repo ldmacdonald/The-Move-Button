@@ -9,53 +9,49 @@
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="index.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <!-- <script src="app.js"></script> -->
   <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <h3 class="appName">The Move Button</h3>
-        <h3><a class="userName" href="#">SignIn</a></hp>
+<header>
+  <h3 class="appName">The Move Button</h3>
+  <h3><a class="userName" href="#">SignIn</a></h3>
 
-    </header>
-    <div class="layout">
+</header>
+<div class="layout">
 
-      <div class="actions">
-        <label for="actions">Actions</label>
+  <div id="actions_div" class="actions">
+    <label for="actions">Actions</label>
 
-        <select id="actions">
-          <option value="walk">Walk</option>
-          <option value="stretch">Stretch</option> 
-          <option value="water">Drink Water</option> 
-        </select>
-      </div>
+    <select id="actions">
+      <option value="walk">Walk</option>
+      <option value="stretch">Stretch</option>
+      <option value="water">Drink Water</option>
+    </select>
+  </div>
 
-      <div class="times">
-        <label for="time_intervals">Time Intervals</label>
+  <div id="timeinterval_div" class="times">
+    <label for="time_intervals">Time Intervals</label>
 
-        <select id="time_intervals">
-          <option value="interval_1">15min</option>
-          <option value="interval_2">30min</option>
-          <option value="interval_3">45min</option>
-          <option value="interval_4">1hr</option>
-          <option value="interval_5">1hr 15min</option>
-          <option value="interval_6">1hr 30min</option>
-          <option value="interval_7">1hr 45min</option>
-          <option value="interval_8">2hr</option>  
-        </select>
-      </div>
+    <select id="time_intervals">
+      <option value="interval_1">15min</option>
+      <option value="interval_2">30min</option>
+      <option value="interval_3">45min</option>
+      <option value="interval_4">1hr</option>
+      <option value="interval_5">1hr 15min</option>
+      <option value="interval_6">1hr 30min</option>
+      <option value="interval_7">1hr 45min</option>
+      <option value="interval_8">2hr</option>
+    </select>
+  </div>
 
-        <button class="btn" type="button">SET</button>
+  <button id="set" onClick="showtimer()" class="btn" type="button">SET</button>
 
-    </div>
-
-    <!-- <footer>
-      <p class="footTag">Copyright ©2019 MyPinStash.com</p>
-    </footer> -->
-
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-
+</div>
+<script src="./app.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </body>
 
 </html>

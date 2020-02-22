@@ -7,45 +7,25 @@
   <meta name="author" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="index.css" rel="stylesheet">
+  <link href="login.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Mansalva&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header>
         <h3 class="appName">The Move Button</h3>
-        <h3><a class="userName" href="#">SignIn</a></hp>
-
+    
     </header>
     <div class="layout">
-
-      <div class="actions">
-        <label for="actions">Actions</label>
-
-        <select id="actions">
-          <option value="walk">Walk</option>
-          <option value="stretch">Stretch</option> 
-          <option value="water">Drink Water</option> 
-        </select>
-      </div>
-
-      <div class="times">
-        <label for="time_intervals">Time Intervals</label>
-
-        <select id="time_intervals">
-          <option value="interval_1">15min</option>
-          <option value="interval_2">30min</option>
-          <option value="interval_3">45min</option>
-          <option value="interval_4">1hr</option>
-          <option value="interval_5">1hr 15min</option>
-          <option value="interval_6">1hr 30min</option>
-          <option value="interval_7">1hr 45min</option>
-          <option value="interval_8">2hr</option>  
-        </select>
-      </div>
-
-        <button class="btn" type="button">SET</button>
-
+        <form action="/action_page.php">
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" value=""><br>
+            <label for="uname">UserName:</label><br>
+            <input type="text" id="uname" name="uname" value=""><br>
+            <label for="password">Password:</label><br>
+            <input type="text" id="password" name="password" value=""><br><br>
+            <input type="submit" value="Create Account">
+          </form> 
     </div>
 
     <!-- <footer>

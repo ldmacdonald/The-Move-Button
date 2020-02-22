@@ -22,7 +22,7 @@ app.post('/register', function(req, res){
 app.post('/sendEvent', function(req, res){
 		var apigClient = apigClientFactory.newClient({
 			invokeUrl:'<>',
-			region: 'us-west-2',
+			region: '<>',
 			accessKey: '<>',
 			secretKey: '<>'
 		});

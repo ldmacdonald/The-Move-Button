@@ -8,25 +8,8 @@ function showtimer(){
     console.log($("#time_intervals").find(":selected").text());
 
 
-    var jqxhr = $.post( "login", function() {
-          alert( "success" );
-        })
-          .done(function() {
-            alert( "second success" );
-          })
-          .fail(function() {
-            alert( "error" );
-          })
-          .always(function() {
-            alert( "finished" );
-          });
-
-        // Perform other work here ...
-
-        // Set another completion function for the request above
-        jqxhr.always(function() {
-          alert( "second finished" );
-        });
-
+    var jqxhr = $.post( "sendEvent", function( data ) {
+       alert( "Data Loaded: " + data );
+     });
 
 }

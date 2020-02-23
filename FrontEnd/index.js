@@ -1,7 +1,19 @@
 const express = require('express');
 const uuid = require('uuid');
+const bodyParser = require('body-parser');
 var app = express.createServer();
+app.use(bodyParser.json()); // support json encoded bodies
+app.use(bodyParser.urlencoded({ extended: false })); 
+
 const path = require("path");
+const low = require('lowdb')
+const FileSync = require('lowdb/adapters/FileSync')
+
+const adapter = new FileSync('db.json')
+const db = low(adapter)
+db.defaults({ schedule: []})
+  .write();
+  
 const port = 3000;
 var fs = require('fs');
 var apigClientFactory = require('aws-api-gateway-client').default;
@@ -16,6 +28,23 @@ app.post('/register', function(req, res){
 		console.log(email + "-" + pwd);
 		// Auth
 		res.status(200).send({Guid : uuid.v1()});
+	}
+);
+
+app.post('/schedule', function(req, res){
+		var sc = req.body;
+		console.log(sc);
+		db.get('schedule')
+		  .push(sc)
+		  .write()
+		res.status(200).send({Guid : uuid.v1()});
+	}
+);
+
+app.get('/schedule', function(req, res){
+		res.status(200).send(db.get('schedule')
+		  .take(5)
+		  .value());
 	}
 );
 

@@ -17,7 +17,7 @@
 <body>
 <header>
   <h3 class="appName">The Move Button</h3>
-  <h3><a class="userName" href="#">SignIn</a></h3>
+  <h3><a class="userName" href="#"></a></h3>
 
 </header>
 <div class="layout">
@@ -36,18 +36,23 @@
     <label for="time_intervals">Time Intervals</label>
 
     <select id="time_intervals">
-      <option value="interval_1">15min</option>
-      <option value="interval_2">30min</option>
-      <option value="interval_3">45min</option>
-      <option value="interval_4">1hr</option>
-      <option value="interval_5">1hr 15min</option>
-      <option value="interval_6">1hr 30min</option>
-      <option value="interval_7">1hr 45min</option>
-      <option value="interval_8">2hr</option>
+      <option value="interval_1">1</option>
+      <option value="interval_1">15</option>
+      <option value="interval_2">30</option>
+      <option value="interval_3">45</option>
+      <option value="interval_4">60</option>
+      <option value="interval_5">75</option>
+      <option value="interval_6">90</option>
+      <option value="interval_7">105</option>
+      <option value="interval_8">120</option>
     </select>
   </div>
 
-  <button id="set" onClick="showtimer()" class="btn" type="button">SET</button>
+  <button id="set" onClick="setschedule()" class="btn" type="button">Set</button>
+
+  <button id="action_btn" onClick="updatedb()" class="btn" type="button">Complete Walk</button>
+
+<!--  <button id="action_complete_btn" class="btn" type="button" >START TIMER</button>-->
 
 </div>
 <script src="./app.js"></script>

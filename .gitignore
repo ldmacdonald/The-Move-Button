@@ -106,3 +106,5 @@ dist
 ./work/
 ./FrontEnd/.DS_Store
 .idea/
+
+./FrontEnd/index.js

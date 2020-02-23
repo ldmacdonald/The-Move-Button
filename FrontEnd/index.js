@@ -57,11 +57,11 @@ app.get('/nowIstheTime', function(req, res){
 app.post('/sendEvent', function(req, res){
 		var apigClient = apigClientFactory.newClient({
 			invokeUrl:'<>',
-			region: 'us-west-2',                                           
-			accessKey: '<>',                                
+			region: '<>',
+			accessKey: '<>',
 			secretKey: '<>'
 		});
-		
+
 		var pathParams = {
 		};
 		var method = 'POST';
@@ -81,6 +81,19 @@ app.post('/sendEvent', function(req, res){
 		res.status(200).send({Guid : uuid.v1()});
 	}
 );
+
+app.get('/signup', function(req, res){
+		fs.readFile('www/signup.html',
+            function(err, data) {
+                if (err) throw err;
+                res.writeHead(200);
+                res.write(data.toString('utf8'));
+                return res.end();
+        });
+
+	}
+);
+
 
 app.get('/login', function(req, res){
 		fs.readFile('www/login.html',

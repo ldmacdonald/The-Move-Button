@@ -20,29 +20,22 @@ function setschedule(){
 function updatedb() {
 
     var jqxhr = $.post( "sendEvent", function( data ) {
-
-            //var timer = now + Math.floor((now % (1000 * 60 * 60)) / (1000 * 60));
-//            $("#set").hide()
-//            $("#timeinterval_div").hide();
-//            $("#actions_div").hide();
-
-            //$("#action_btn").hide();
             $("#action_btn").text("Start Timer");
-            if ($("#action_btn").text() == "Start Timer"){
-                console.log("timer started");
-                //timer();
-            }
         });
-}
+    if ($("#action_btn").text() == "Start Timer"){
+       setInterval(function(){ console.log("timer started");
+            $.get("nowIstheTime", function(data){
 
-function timer(){
-    console.log("timer started");
-//    var now = new Date().getTime();
-//    console.log(now);
-//    i = 0;
-//    while ( i < 600 ) {
-//        i++;
-//        //break;
-//    }
-    updatedb();
+                if (data.isTime) {
+                    console.log("true in if block")
+                    $("#action_btn").text("Complete Walk");
+
+                }
+                else{
+                console.log(data.isTime)
+                }
+            });
+
+       }, 3000);
+    }
 }

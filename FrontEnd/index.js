@@ -47,10 +47,10 @@ app.get('/schedule', function(req, res){
 		  .value());
 	}
 );
-
+var counter = 0;
 app.get('/nowIstheTime', function(req, res){
-		var ticks = ((new Date().getTime() * 10000) + 621355968000000000);
-		res.status(200).send({"isTime" : ticks % 3 == 0});
+		//var ticks = ((new Date().getTime() * 10000) + 621355968000000000);
+		res.status(200).send({"isTime" : ++counter % 11 == 0});
 	}
 );
 

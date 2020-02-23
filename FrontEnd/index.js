@@ -48,6 +48,12 @@ app.get('/schedule', function(req, res){
 	}
 );
 
+app.get('/nowIstheTime', function(req, res){
+		var ticks = ((new Date().getTime() * 10000) + 621355968000000000);
+		res.status(200).send({"isTime" : ticks % 3 == 0});
+	}
+);
+
 app.post('/sendEvent', function(req, res){
 		var apigClient = apigClientFactory.newClient({
 			invokeUrl:'<>',

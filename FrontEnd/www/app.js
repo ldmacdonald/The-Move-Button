@@ -16,20 +16,21 @@ function setschedule(){
         $("#action_btn").show();
     });
 }
-
+var interval = null;
 function updatedb() {
 
     var jqxhr = $.post( "sendEvent", function( data ) {
             $("#action_btn").text("Start Timer");
         });
     if ($("#action_btn").text() == "Start Timer"){
-       setInterval(function(){ console.log("timer started");
+       //if (interval != null ) { clearInterval(interval);}
+       interval = setInterval(function(){ console.log("timer started");
             $.get("nowIstheTime", function(data){
 
                 if (data.isTime) {
                     console.log("true in if block")
                     $("#action_btn").text("Complete Walk");
-
+                    clearInterval(interval);
                 }
                 else{
                 console.log(data.isTime)

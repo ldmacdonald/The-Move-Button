@@ -56,10 +56,10 @@ app.get('/nowIstheTime', function(req, res){
 
 app.post('/sendEvent', function(req, res){
 		var apigClient = apigClientFactory.newClient({
-			invokeUrl:'<>',
-			region: '<>',
-			accessKey: '<>',
-			secretKey: '<>'
+			invokeUrl:'',
+			region: '',
+			accessKey: '',
+			secretKey: ''
 		});
 
 		var pathParams = {
